@@ -1,0 +1,24 @@
+{
+  "name": "chess",
+  "version": "1.0.0",
+  "description": "Simple Chess Program with AI",
+  "main": "web/index.js",
+  "scripts": {
+    "start": "node web/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/daniel-wenzel/chess.git"
+  },
+  "author": "Daniel Wenzel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/daniel-wenzel/chess/issues"
+  },
+  "homepage": "https://github.com/daniel-wenzel/chess#readme",
+  "dependencies": {
+    "express": "^4.15.3",
+    "uuid": "^3.1.0"
+  }
+}

@@ -1,0 +1,10 @@
+Tutorium 13 Gruppe 2
+Daniel Wenzel	365107
+Roman Tayupov	365113
+Victor Rathke	347536 
+Paul Visser 	364948
+
+Tutorium: Tobias Pfeffer Dienstag 12:00 Uhr MAR 4.063
+
+ChessBot.hs erfüllt die Mindestanforderungen der Aufgabe
+SmartBot.hs sollte im Sppiel besser sein
