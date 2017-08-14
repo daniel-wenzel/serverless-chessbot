@@ -1,5 +1,3 @@
-console.log("hello world")
-
 const express = require('express')
 const app = express()
 const { exec } = require('child_process');

@@ -1,8 +1,9 @@
 {-# LANGUAGE DoAndIfThenElse #-}
-module Main 
+module Main
 where
 
 import ChessBot
+import Fen
 import System.Environment
 
 -- compile with "ghc -o ChessBot ChessBot.hs Main.hs"
@@ -12,12 +13,12 @@ import System.Environment
 -- example: a8 b7
 
 main :: IO ()
-main = do 
-    args <- getArgs 
-    if length args >= 2 then 
-            let arg1 = head args 
+main = do
+    args <- getArgs
+    if length args >= 2 then
+            let arg1 = head args
                 arg2 = head (tail args) in
             if validateFENString (arg1) && (arg2 == "w" || arg2 == "b") then
                 putStrLn (botFindMove arg1 arg2)
             else putStrLn ""
-    else putStrLn "" 
+    else putStrLn ""

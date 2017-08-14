@@ -1,9 +1,7 @@
 var board,
   game = new Chess(),
   statusEl = $('#status'),
-  fenEl = $('#fen'),
-  pgnEl = $('#pgn');
-
+  fenEl = $('#fen')
 
 var playerColor = 'w'
 
@@ -69,8 +67,29 @@ var updateStatus = function() {
 
   statusEl.html(status);
   fenEl.html(game.fen());
-  pgnEl.html(game.pgn());
+  updatePGN()
 };
+
+function updatePGN() {
+  var pgn=document.querySelector("#gameHistory")
+  var moves=game.pgn().match(/\d+\.( \S+){1,2}/g)
+  console.log(moves)
+  console.log(game.pgn())
+  if (!moves) return
+  var newestMove=moves[moves.length-1]
+
+  var el=document.querySelector("#move-"+(moves.length-1))
+  if (!el) {
+    el = document.createElement("DIV");
+    el.appendChild(document.createTextNode(newestMove))
+    el.setAttribute("id", "move-"+(moves.length-1))
+    el.setAttribute("class", "historyMove")
+    pgn.appendChild(el)
+  }
+  else {
+    el.innerText = newestMove
+  }
+}
 
 var cfg = {
   draggable: true,

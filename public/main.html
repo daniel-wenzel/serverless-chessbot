@@ -2,16 +2,24 @@
 <head>
   <title>Chess</title>
   <link rel="stylesheet" href="css/chessboard-0.3.0.min.css" />
+  <link rel="stylesheet" href="css/main.css" />
 </head>
 <body>
-  <div>Move any figure to start</div>
-  <div id="board" style="width: 400px"></div>
-  <p>Status: <span id="status"></span></p>
-  <p>FEN: <span id="fen"></span></p>
-  <p>PGN: <span id="pgn"></span></p>
+  <div>
+    <h1>Experimental ChessBot</h1>
+    <div class="row">
+      <div class="col-6" id="board" style="width: 60vh"></div>
+      <div class="col-3">
+        <div class="status"><span id="status">Move any figure to start</span></div>
+        <h2>History</h2>
+        <div id="gameHistory"></div>
+      </div>
+    </div>
+  </div>
+  <div>Chessbot by Daniel Wenzel, written in Haskell. UI made with ChessBoard.js and Chess.js. Find the source code here.</div>
   <script src="js/jquery-3.2.1.min.js"></script>
   <script src="js/chessboard-0.3.0.min.js"></script>
   <script src="js/chess.js"></script> <!-- Chess rules -->
   <script src="js/main.js"></script>
-  <script src="js/ai.js"></script> 
+  <script src="js/ai.js"></script>
 </body>
