@@ -3,7 +3,7 @@ module Settings where
 
 import Color
 depth :: Int
-depth = 1
+depth = 3
 
 cutoff :: Bool
 cutoff = True
@@ -17,4 +17,4 @@ beta0 White = alpha0 Black
 beta0 Black = alpha0 White
 
 traceDepth :: Int
-traceDepth = depth
+traceDepth = depth+1
