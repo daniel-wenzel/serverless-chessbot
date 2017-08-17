@@ -1,0 +1,2 @@
+/usr/lib/ghc/bin/ghc -B/usr/lib/ghc --make -o ./bin/bot SmartBot.hs Main.hs +RTS -threaded -N 
+<<ghc: 149364512 bytes, 164 GCs, 4376923/12379392 avg/max bytes residency (7 samples), 28M in use, 0.004 INIT (0.004 elapsed), 0.253 MUT (0.578 elapsed), 0.477 GC (0.172 elapsed) :ghc>>

@@ -2,7 +2,7 @@
 
 const exec = require('child_process').exec;
 
-module.exports.move = (event, context, callback) => {
+module.exports.handler = (event, context, callback) => {
   let sendResponse = sendResponseInit(callback)
 
   if (!event.queryStringParameters) {
@@ -26,7 +26,7 @@ module.exports.move = (event, context, callback) => {
 
 
     // the *entire* stdout and stderr (buffered)
-    return sendResponse(200, stdout)
+    return sendResponse(200, stdout.trim())
     //res.status(200).send(stdout)
   });
 
@@ -38,7 +38,11 @@ function sendResponseInit(callback) {
   return (statusCode, message) => {
     callback(null, {
         statusCode: statusCode,
-        body: JSON.stringify(message)
+        body: JSON.stringify(message),
+        headers: {
+          "Access-Control-Allow-Origin" : "*", // Required for CORS support to work
+          "Access-Control-Allow-Credentials" : true // Required for cookies, authorization headers with HTTPS
+        },
     })
   }
 }
